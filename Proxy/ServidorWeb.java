@@ -1,6 +1,6 @@
 import java.net.*;
 import java.io.*;
-public class ServidorWeb1 {
+public class ServidorWeb {
 	public static String getContenidoHTML(String host) throws IOException {
 	    URL url = new URL(host);
 	    URLConnection uc = url.openConnection();
