@@ -39,7 +39,7 @@ public class ServidorWeb2 {
                 System.out.println("La direccion es: " + otra);
 
             	try { 
-                	URL url = new URL(otra);//Convertimos en url lo que nos mando el server publico
+                	URL url = new URL(linea);//Convertimos en url lo que nos mando el server publico
             	    URLConnection uc = url.openConnection();
             	    uc.connect();
             	    
