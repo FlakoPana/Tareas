@@ -18,7 +18,7 @@ public class ServidorWeb {
 	}
         public static void CnxServer2 (String recurso, PrintWriter salida_navegador) {
             //Ahora se comportara como un cliente
-            try{
+            
             	System.out.println(" Antes del nuevo socket");
                // Socket ser_privado= new Socket ("148.226.81.117", 5100);// Se hace la conexion al servidor
                 //Socket ser_privado= new Socket ("127.0.0.1", 5100);// Se hace la conexion al servidor
@@ -26,23 +26,23 @@ public class ServidorWeb {
        		  	System.out.println(" Entro aqui");
                 String cadena;
                 //para enviar el server privado
-                PrintWriter sal_servidor1 = new PrintWriter(ser_privado.getOutputStream(),true);
+               // PrintWriter sal_servidor1 = new PrintWriter(ser_privado.getOutputStream(),true);
                 //Para recuperar la respuesta del server
-                DataInputStream en_servidor1 = new DataInputStream(ser_privado.getInputStream());
-                sal_servidor1.println(recurso);//Escribo al server
-                while (!(cadena = en_servidor1.readUTF()).equals(null)){ //imprimir respuesta del servidor
+              //  DataInputStream en_servidor1 = new DataInputStream(ser_privado.getInputStream());
+              //  sal_servidor1.println(recurso);//Escribo al server
+                /*while (!(cadena = en_servidor1.readUTF()).equals(null)){ //imprimir respuesta del servidor
           		  System.out.println(" El servidor privado me responde = "+cadena);
           		  salida_navegador.println(cadena);
           		  salida_navegador.flush();
-          	  	}
+          	  	}*/
                //ser_privado.close();//Cierro objetos
-                sal_servidor1.close();
-                en_servidor1.close();
-            } catch (IOException e) {//Error
-                System.out.println("Error en conexion " + e);
+              //  sal_servidor1.close();
+               // en_servidor1.close();
+             //catch (IOException e) {//Error
+               // System.out.println("Error en conexion " + e);
             }
             
-        }
+        
                 
     public static void main(String args[])
     {
