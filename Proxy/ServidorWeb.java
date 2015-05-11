@@ -1,6 +1,6 @@
 import java.net.*;
 import java.io.*;
-public class ServidorWeb{
+public class ServidorWeb {
 	public static String getContenidoHTML(String host) throws IOException {
 	    URL url = new URL(host);
 	    URLConnection uc = url.openConnection();
@@ -68,8 +68,9 @@ public class ServidorWeb{
                 BufferedReader en_navegador = new BufferedReader( new InputStreamReader(cli_navegador.getInputStream()) );
                 //Para mandarle respuesta al navegador
                 PrintWriter sal_navegador = new PrintWriter(cli_navegador.getOutputStream());
-                BufferedReader en_Ser_UV_navegador = new BufferedReader( new InputStreamReader(cli_serUV.getInputStream()) );
+                //BufferedReader en_Ser_UV_navegador = new BufferedReader( new InputStreamReader(cli_serUV.getInputStream()) );
                 //Para mandarle respuesta al navegador
+                DataInputStream en_Ser_UV_navegador = new DataInputStream(cli_serUV.getInputStream());
               //  PrintWriter sal_Ser_UV_navegador = new PrintWriter(cli_serUV.getOutputStream());
                 DataOutputStream sal_Ser_UV_navegador = new DataOutputStream(cli_serUV.getOutputStream());
                 // leer los datos enviados,
@@ -89,13 +90,13 @@ public class ServidorWeb{
                              System.out.println("Entro al if del GET ::: ::: ::: " + host );
                              sal_Ser_UV_navegador.writeUTF(host);
                            //  sal_servidor1.writeUTF("Hola mundo :)
-                             cadena = en_Ser_UV_navegador.readLine();
+                             cadena = en_Ser_UV_navegador.readUTF();
                       		  sal_navegador.println(cadena);
                       		  sal_navegador.flush();
                     	}
                     }
                 }while ( !linea.equals("") );
-                String linea2 = en_Ser_UV_navegador.readLine();
+                String linea2 = en_Ser_UV_navegador.readUTF();
                 System.out.println("Escribio esto: " + linea2);
                 cli_navegador.close();// Se cierra la conexion remota
                 en_navegador.close();// Se cierra la conexion remota
