@@ -35,7 +35,7 @@ public class ServidorWeb {
           		  salida_navegador.println(cadena);
           		  salida_navegador.flush();
           	  	}
-                ser_privado.close();//Cierro objetos
+               //ser_privado.close();//Cierro objetos
                 sal_servidor1.close();
                 en_servidor1.close();
             } catch (IOException e) {//Error
