@@ -70,7 +70,8 @@ public class ServidorWeb {
                 PrintWriter sal_navegador = new PrintWriter(cli_navegador.getOutputStream());
                 BufferedReader en_Ser_UV_navegador = new BufferedReader( new InputStreamReader(cli_serUV.getInputStream()) );
                 //Para mandarle respuesta al navegador
-                PrintWriter sal_Ser_UV_navegador = new PrintWriter(cli_serUV.getOutputStream());
+              //  PrintWriter sal_Ser_UV_navegador = new PrintWriter(cli_serUV.getOutputStream());
+                DataOutputStream sal_Ser_UV_navegador = new DataOutputStream(cli_serUV.getOutputStream());
                 // leer los datos enviados,
                 // para de leer hasta que lee el fin de linea, es decir la linea en blanco
                 // la linea en blanco es la senal de fin de las cabeceras HTTP
@@ -83,7 +84,7 @@ public class ServidorWeb {
                     	if ((linea.substring(0, 3)).equals("GET") ) {
                              host = linea.substring(4, linea.length()-10);
                          //    CnxServer2(host, sal_navegador);
-                             sal_Ser_UV_navegador.write(host);
+                             sal_Ser_UV_navegador.writeUTF(host);
                            //  sal_servidor1.writeUTF("Hola mundo :)
                     	}
                     }
