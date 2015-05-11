@@ -30,10 +30,10 @@ public class ServidorWeb2 {
                 PrintWriter sal_servidor1 = new PrintWriter(ser_publico.getOutputStream(),true);
                  //Para recuperar la respuesta del server
                  DataInputStream en_servidor1 = new DataInputStream(ser_publico.getInputStream());
-                en_servidor1.readUTF();
-                System.out.println( "llego " +en_servidor1.readUTF());
+            
                 sal_servidor1.println("Hola: : : ");//Escribo al server
-                 
+                en_servidor1.readUTF();
+                System.out.println( "llego " + en_servidor1.readUTF());
                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8
               //  BufferedReader en_servidor1 = new BufferedReader( new InputStreamReader(cli_servidor1.getInputStream()) );
                 //PrintWriter sal_servidor1 = new PrintWriter(cli_servidor1.getOutputStream());
