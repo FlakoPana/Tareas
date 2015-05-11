@@ -20,10 +20,10 @@ public class ServidorWeb1 {
             //Ahora se comportará como un cliente
             try{
             	System.out.println(" Antes del nuevo socket");
-                Socket ser_privado= new Socket ("148.226.81.117", 5100);// Se hace la conexión al servidor
-                //Socket ser_privado= new Socket ("127.0.0.1", 5100);// Se hace la conexión al servidor
-            //	Socket ser_privado= new Socket ("192.168.11.50", 5100);// Se hace la conexión al servidor
-       		  	System.out.println(" Entro aquí");
+                Socket ser_privado= new Socket ("148.226.81.117", 5100);// Se hace la conexion al servidor
+                //Socket ser_privado= new Socket ("127.0.0.1", 5100);// Se hace la conexion al servidor
+            //	Socket ser_privado= new Socket ("192.168.11.50", 5100);// Se hace la conexion al servidor
+       		  	System.out.println(" Entro aqui");
                 String cadena;
                 //para enviar el server privado
                 PrintWriter sal_servidor1 = new PrintWriter(ser_privado.getOutputStream(),true);
@@ -39,7 +39,7 @@ public class ServidorWeb1 {
                 sal_servidor1.close();
                 en_servidor1.close();
             } catch (IOException e) {//Error
-                System.out.println("Error en conexión " + e);
+                System.out.println("Error en conexion " + e);
             }
             
         }
@@ -60,9 +60,9 @@ public class ServidorWeb1 {
         while ( true ) {
             try {
                 // espera por una conexion
-                Socket cli_navegador = s.accept();//acepta la conexión del navegador
+                Socket cli_navegador = s.accept();//acepta la conexion del navegador
                 // se acepta la conexion
-                Socket cli_serUV = s2.accept();//acepta la conexión del navegador
+                Socket cli_serUV = s2.accept();//acepta la conexion del navegador
                 System.out.println("Conexion, enviando datos.");
                 //Lee la petición del navegador
                 BufferedReader en_navegador = new BufferedReader( new InputStreamReader(cli_navegador.getInputStream()) );
@@ -77,8 +77,8 @@ public class ServidorWeb1 {
                 String linea=".";
                 String host = "";
                 do {
-                    linea = en_navegador.readLine();//Recupera lo que envío el cliente
-                    System.out.println("El navegador envía: " + linea);
+                    linea = en_navegador.readLine();//Recupera lo que envio el cliente
+                    System.out.println("El navegador envia: " + linea);
                     if  (linea.length()>7) {
                     	if ((linea.substring(0, 3)).equals("GET") ) {
                              host = linea.substring(4, linea.length()-10);
@@ -86,9 +86,9 @@ public class ServidorWeb1 {
                     	}
                     }
                 }while ( !linea.equals("") );
-                cli_navegador.close();// Se cierra la conexión remota
-                en_navegador.close();// Se cierra la conexión remota
-                sal_navegador.close();// Se cierra la conexión remota
+                cli_navegador.close();// Se cierra la conexion remota
+                en_navegador.close();// Se cierra la conexion remota
+                sal_navegador.close();// Se cierra la conexion remota
             } catch ( Exception e ) {
                 System.out.println("Error: " + e );
             }

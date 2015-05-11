@@ -18,10 +18,10 @@ public class ServidorWeb2 {
                 // espera por una conexion del servidor 1 para enviar y recibir
             	// se acepta la conexión
             	Socket ser_publico= new Socket ("cags.com.mx", 5100);// Se hace la conexión al servidor
-                System.out.println(" Entro aquí 1");
+                System.out.println(" Entro aqui 1");
                 Socket cli_servidor1 = s2.accept();
-                System.out.println("Conexión, enviando y recibiendo datos.");
-                System.out.println(" Entro aquí");
+                System.out.println("Conexion, enviando y recibiendo datos.");
+                System.out.println(" Entro aqui");
                 PrintWriter salida_servidor1 = new PrintWriter(ser_publico.getOutputStream(),true);
                 //Para recuperar la respuesta del server
                 DataInputStream entrada_servidor1 = new DataInputStream(ser_publico.getInputStream());
@@ -35,12 +35,12 @@ public class ServidorWeb2 {
                 do {         
                 	linea = en_servidor1.readLine();
                 	otra = linea.substring(7, linea.length());
-                    System.out.println("El servidor envía: " + linea);
-                    System.out.println("El servidor envía............");
+                    System.out.println("El servidor envia: " + linea);
+                    System.out.println("El servidor envia............");
                     System.out.println("uno dos" + otra);
                     //sal_servidor1.writeUTF("Hola mundo :) desde sockets.");
                     try { 
-                    	URL url = new URL(linea);//Convertimos en url lo que nos mando el server público
+                    	URL url = new URL(linea);//Convertimos en url lo que nos mando el server publico
                 	    URLConnection uc = url.openConnection();
                 	    uc.connect();
                 	    //Creamos el objeto con el que vamos a leer
@@ -59,7 +59,7 @@ public class ServidorWeb2 {
                 }while (linea.length()!=0);    
                 if (linea.trim().equals(null))
                     return;
-                en_servidor1.close();// Se cierra la conexión remota
+                en_servidor1.close();// Se cierra la conexion remota
                 cli_servidor1.close();
                 sal_servidor1.close();// 
             } catch ( Exception e ) {
