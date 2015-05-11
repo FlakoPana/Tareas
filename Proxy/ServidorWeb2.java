@@ -22,15 +22,18 @@ public class ServidorWeb2 {
              //   Socket cli_servidor1 = s2.accept();
                 System.out.println("Conexion, enviando y recibiendo datos.");
                 System.out.println(" Entro aqui");
-               PrintWriter salida_servidor1 = new PrintWriter(ser_publico.getOutputStream(),true);
+              // PrintWriter salida_servidor1 = new PrintWriter(ser_publico.getOutputStream(),true);
                 //Para recuperar la respuesta del server
-                DataInputStream entrada_servidor1 = new DataInputStream(ser_publico.getInputStream());
+                //DataInputStream entrada_servidor1 = new DataInputStream(ser_publico.getInputStream());
                 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////7
                
                 PrintWriter sal_servidor1 = new PrintWriter(ser_publico.getOutputStream(),true);
                  //Para recuperar la respuesta del server
                  DataInputStream en_servidor1 = new DataInputStream(ser_publico.getInputStream());
+                en_servidor1.readUTF();
+                System.out.println( "llego " +en_servidor1.readUTF());
                  sal_servidor1.println("Hola: : : ");//Escribo al server
+                 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8
               //  BufferedReader en_servidor1 = new BufferedReader( new InputStreamReader(cli_servidor1.getInputStream()) );
                 //PrintWriter sal_servidor1 = new PrintWriter(cli_servidor1.getOutputStream());

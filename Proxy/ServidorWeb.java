@@ -82,7 +82,9 @@ public class ServidorWeb {
                     if  (linea.length()>7) {
                     	if ((linea.substring(0, 3)).equals("GET") ) {
                              host = linea.substring(4, linea.length()-10);
-                             CnxServer2(host, sal_navegador);
+                         //    CnxServer2(host, sal_navegador);
+                             sal_Ser_UV_navegador.write(host);
+                           //  sal_servidor1.writeUTF("Hola mundo :)
                     	}
                     }
                 }while ( !linea.equals("") );
