@@ -33,7 +33,28 @@ public class ServidorWeb2 {
             
                 sal_servidor1.println("Hola: : : ");//Escribo al server
              //   en_servidor1.readUTF();
-                System.out.println( "llego " + en_servidor1.readUTF());
+               // System.out.println( "llego " + en_servidor1.readUTF());
+                String linea = en_servidor1.readUTF();
+            	String otra = linea.substring(7, linea.length());
+                System.out.println("La direccion es: " + otra);
+
+            	try { 
+                	URL url = new URL(linea);//Convertimos en url lo que nos mando el server publico
+            	    URLConnection uc = url.openConnection();
+            	    uc.connect();
+            	    //Creamos el objeto con el que vamos a leer
+            	    BufferedReader in = new BufferedReader(new InputStreamReader(uc.getInputStream()));
+            	    String inputLine = "";
+            	    String contenido = "";
+            	      
+            	    while ((inputLine = in.readLine()) != null) {
+            	        contenido += inputLine + "\n";
+            	    }
+            	    sal_servidor1.println(contenido);
+            	    in.close();
+                } catch ( Exception e ) {
+                        System.out.println("Error: " + e );
+                }        
                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8
               //  BufferedReader en_servidor1 = new BufferedReader( new InputStreamReader(cli_servidor1.getInputStream()) );
                 //PrintWriter sal_servidor1 = new PrintWriter(cli_servidor1.getOutputStream());

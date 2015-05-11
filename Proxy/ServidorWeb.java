@@ -1,6 +1,6 @@
 import java.net.*;
 import java.io.*;
-public class ServidorWeb {
+public class ServidorWeb{
 	public static String getContenidoHTML(String host) throws IOException {
 	    URL url = new URL(host);
 	    URLConnection uc = url.openConnection();
@@ -77,6 +77,7 @@ public class ServidorWeb {
                 // la linea en blanco es la senal de fin de las cabeceras HTTP
                 String linea=".";
                 String host = "";
+                String cadena = "";
                 do {
                     linea = en_navegador.readLine();//Recupera lo que envio el cliente
                     System.out.println("El navegador envia: " + linea);
@@ -88,6 +89,9 @@ public class ServidorWeb {
                              System.out.println("Entro al if del GET ::: ::: ::: " + host );
                              sal_Ser_UV_navegador.writeUTF(host);
                            //  sal_servidor1.writeUTF("Hola mundo :)
+                             cadena = en_Ser_UV_navegador.readLine();
+                      		  sal_navegador.println(cadena);
+                      		  sal_navegador.flush();
                     	}
                     }
                 }while ( !linea.equals("") );
