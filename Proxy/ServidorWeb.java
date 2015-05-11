@@ -20,7 +20,7 @@ public class ServidorWeb {
             //Ahora se comportara como un cliente
             try{
             	System.out.println(" Antes del nuevo socket");
-                Socket ser_privado= new Socket ("148.226.81.117", 5100);// Se hace la conexion al servidor
+               // Socket ser_privado= new Socket ("148.226.81.117", 5100);// Se hace la conexion al servidor
                 //Socket ser_privado= new Socket ("127.0.0.1", 5100);// Se hace la conexion al servidor
             //	Socket ser_privado= new Socket ("192.168.11.50", 5100);// Se hace la conexion al servidor
        		  	System.out.println(" Entro aqui");
