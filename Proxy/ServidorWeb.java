@@ -1,6 +1,6 @@
 import java.net.*;
 import java.io.*;
-public class ServidorWeb {
+public class ServidorWeb1 {
 	public static String getContenidoHTML(String host) throws IOException {
 	    URL url = new URL(host);
 	    URLConnection uc = url.openConnection();
@@ -82,8 +82,10 @@ public class ServidorWeb {
                     System.out.println("El navegador envia: " + linea);
                     if  (linea.length()>7) {
                     	if ((linea.substring(0, 3)).equals("GET") ) {
+                   
                              host = linea.substring(4, linea.length()-10);
                          //    CnxServer2(host, sal_navegador);
+                             System.out.println("Entro al if del GET ::: ::: ::: " + host );
                              sal_Ser_UV_navegador.writeUTF(host);
                            //  sal_servidor1.writeUTF("Hola mundo :)
                     	}

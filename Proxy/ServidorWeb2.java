@@ -32,7 +32,7 @@ public class ServidorWeb2 {
                  DataInputStream en_servidor1 = new DataInputStream(ser_publico.getInputStream());
             
                 sal_servidor1.println("Hola: : : ");//Escribo al server
-                en_servidor1.readUTF();
+             //   en_servidor1.readUTF();
                 System.out.println( "llego " + en_servidor1.readUTF());
                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8
               //  BufferedReader en_servidor1 = new BufferedReader( new InputStreamReader(cli_servidor1.getInputStream()) );
