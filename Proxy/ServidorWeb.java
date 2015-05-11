@@ -92,12 +92,15 @@ public class ServidorWeb {
                            //  sal_servidor1.writeUTF("Hola mundo :)
                              cadena = en_Ser_UV_navegador.readUTF();
                       		  sal_navegador.println(cadena);
-                      		  sal_navegador.flush();
+                      		//  sal_navegador.flush();
+                              System.out.println("Escribio esto: " + cadena);
+
                     	}
                     }
-                }while ( !linea.equals("") );
-                String linea2 = en_Ser_UV_navegador.readUTF();
-                System.out.println("Escribio esto: " + linea2);
+                }while ( linea.length() != 0 );
+                //while ( !linea.equals("") );
+               // String linea2 = en_Ser_UV_navegador.readUTF();
+                //System.out.println("Escribio esto: " + linea2);
                 cli_navegador.close();// Se cierra la conexion remota
                 en_navegador.close();// Se cierra la conexion remota
                 sal_navegador.close();// Se cierra la conexion remota
