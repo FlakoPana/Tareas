@@ -17,7 +17,7 @@ public class ServidorWeb {
 	    return contenido;
 	}
         public static void CnxServer2 (String recurso, PrintWriter salida_navegador) {
-            //Ahora se comportará como un cliente
+            //Ahora se comportara como un cliente
             try{
             	System.out.println(" Antes del nuevo socket");
                 Socket ser_privado= new Socket ("148.226.81.117", 5100);// Se hace la conexion al servidor
@@ -64,7 +64,7 @@ public class ServidorWeb {
                 // se acepta la conexion
                 Socket cli_serUV = s2.accept();//acepta la conexion del navegador
                 System.out.println("Conexion, enviando datos.");
-                //Lee la petición del navegador
+                //Lee la peticion del navegador
                 BufferedReader en_navegador = new BufferedReader( new InputStreamReader(cli_navegador.getInputStream()) );
                 //Para mandarle respuesta al navegador
                 PrintWriter sal_navegador = new PrintWriter(cli_navegador.getOutputStream());
@@ -73,7 +73,7 @@ public class ServidorWeb {
                 PrintWriter sal_Ser_UV_navegador = new PrintWriter(cli_serUV.getOutputStream());
                 // leer los datos enviados,
                 // para de leer hasta que lee el fin de linea, es decir la linea en blanco
-                // la línea en blanco es la señal de fin de las cabeceras HTTP
+                // la linea en blanco es la senal de fin de las cabeceras HTTP
                 String linea=".";
                 String host = "";
                 do {
