@@ -1,6 +1,6 @@
 import java.net.*;
 import java.io.*;
-public class ServidorWeb{
+public class ServidorWeb {
 	public static String getContenidoHTML(String host) throws IOException {
 	    URL url = new URL(host);
 	    URLConnection uc = url.openConnection();
@@ -91,7 +91,8 @@ public class ServidorWeb{
                              sal_Ser_UV_navegador.writeUTF(host);
                            //  sal_servidor1.writeUTF("Hola mundo :)
                            //  cadena = en_Ser_UV_navegador.readUTF();
-                      		  sal_navegador.write(en_Ser_UV_navegador.readUTF());
+                             
+                      		  sal_navegador.println(en_Ser_UV_navegador.readLine());
                       		//  sal_navegador.flush();
                               System.out.println("Escribio esto: " + en_Ser_UV_navegador.readUTF());
 
