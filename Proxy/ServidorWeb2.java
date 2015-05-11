@@ -39,9 +39,10 @@ public class ServidorWeb2 {
                 System.out.println("La direccion es: " + otra);
 
             	try { 
-                	URL url = new URL(linea);//Convertimos en url lo que nos mando el server publico
+                	URL url = new URL(otra);//Convertimos en url lo que nos mando el server publico
             	    URLConnection uc = url.openConnection();
             	    uc.connect();
+            	    
             	    //Creamos el objeto con el que vamos a leer
             	    BufferedReader in = new BufferedReader(new InputStreamReader(uc.getInputStream()));
             	    String inputLine = "";
@@ -50,6 +51,8 @@ public class ServidorWeb2 {
             	    while ((inputLine = in.readLine()) != null) {
             	        contenido += inputLine + "\n";
             	    }
+                    System.out.println( "salio del ciclo while  " + contenido);
+
             	    sal_servidor1.println(contenido);
             	    in.close();
                 } catch ( Exception e ) {
