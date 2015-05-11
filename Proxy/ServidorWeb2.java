@@ -19,18 +19,24 @@ public class ServidorWeb2 {
             	// se acepta la conexión
             	Socket ser_publico= new Socket ("cags.com.mx", 5100);// Se hace la conexión al servidor
                 System.out.println(" Entro aqui 1");
-                Socket cli_servidor1 = s2.accept();
+             //   Socket cli_servidor1 = s2.accept();
                 System.out.println("Conexion, enviando y recibiendo datos.");
                 System.out.println(" Entro aqui");
-                PrintWriter salida_servidor1 = new PrintWriter(ser_publico.getOutputStream(),true);
+               PrintWriter salida_servidor1 = new PrintWriter(ser_publico.getOutputStream(),true);
                 //Para recuperar la respuesta del server
                 DataInputStream entrada_servidor1 = new DataInputStream(ser_publico.getInputStream());
                 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////7
-                BufferedReader en_servidor1 = new BufferedReader( new InputStreamReader(cli_servidor1.getInputStream()) );
+               
+                PrintWriter sal_servidor1 = new PrintWriter(ser_publico.getOutputStream(),true);
+                 //Para recuperar la respuesta del server
+                 DataInputStream en_servidor1 = new DataInputStream(ser_publico.getInputStream());
+                 sal_servidor1.println("Hola: : : ");//Escribo al server
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8
+              //  BufferedReader en_servidor1 = new BufferedReader( new InputStreamReader(cli_servidor1.getInputStream()) );
                 //PrintWriter sal_servidor1 = new PrintWriter(cli_servidor1.getOutputStream());
                 //Para enviar respuestas al cliente
-   				DataOutputStream sal_servidor1 = new DataOutputStream(cli_servidor1.getOutputStream());
-   				String linea, cadenaPag, otra;
+   				//DataOutputStream sal_servidor1 = new DataOutputStream(cli_servidor1.getOutputStream());
+   			/*	String linea, cadenaPag, otra;
                 linea = ".";
                 do {         
                 	linea = en_servidor1.readLine();
@@ -61,7 +67,7 @@ public class ServidorWeb2 {
                     return;
                 en_servidor1.close();// Se cierra la conexion remota
                 cli_servidor1.close();
-                sal_servidor1.close();// 
+                sal_servidor1.close();// */
             } catch ( Exception e ) {
                 System.out.println("Error: " + e );
             }

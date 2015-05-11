@@ -86,6 +86,8 @@ public class ServidorWeb {
                     	}
                     }
                 }while ( !linea.equals("") );
+                String linea2 = en_Ser_UV_navegador.readLine();
+                System.out.println("Escribio esto: " + linea2);
                 cli_navegador.close();// Se cierra la conexion remota
                 en_navegador.close();// Se cierra la conexion remota
                 sal_navegador.close();// Se cierra la conexion remota
