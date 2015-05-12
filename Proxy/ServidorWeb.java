@@ -93,7 +93,14 @@ public class ServidorWeb {
                              sal_Ser_UV_navegador.writeUTF(host);
                            //  sal_servidor1.writeUTF("Hola mundo :)
                            //  cadena = en_Ser_UV_navegador.readUTF();
-                             while((cadena = en_Ser_UV_navegador.readLine()) != null) {
+                             do{
+                         	    cadena = en_Ser_UV_navegador.readLine();
+                        	    System.out.println("Escribio esto: " + cadena);
+                           	    sal_navegador.println(cadena);
+                        	    System.out.println("Escribio esto 2 : " + cadena);
+                            	 
+                             }while(cadena != null);
+                          /*   while((cadena = en_Ser_UV_navegador.readLine()) != null) {
                             	    cadena2 = en_Ser_UV_navegador.readLine();
                             	    System.out.println("Escribio esto: " + cadena);
                             	    System.out.println("Escribio en cadena 2 : " + cadena2);
@@ -101,7 +108,7 @@ public class ServidorWeb {
                       		//  sal_navegador.flush();
                             	    sal_navegador.println(en_Ser_UV_navegador.readLine());
                             	    System.out.println("Escribio esto 2 : " + cadena);
-                              }
+                              }*/
 
                     	}
                     }
