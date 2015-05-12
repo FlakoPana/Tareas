@@ -91,10 +91,12 @@ public class ServidorWeb {
                              sal_Ser_UV_navegador.writeUTF(host);
                            //  sal_servidor1.writeUTF("Hola mundo :)
                            //  cadena = en_Ser_UV_navegador.readUTF();
-                             
-                      		  sal_navegador.println(en_Ser_UV_navegador.readUTF());
+                             while((cadena = en_Ser_UV_navegador.readUTF()) != null) {
+                            	    System.out.println("Escribio esto: " + cadena);
+                            	 sal_navegador.println(en_Ser_UV_navegador.readUTF());
                       		//  sal_navegador.flush();
-                              System.out.println("Escribio esto: " + en_Ser_UV_navegador.readUTF());
+                            	 System.out.println("Escribio esto 2 : " + cadena);
+                              }
 
                     	}
                     }

@@ -49,11 +49,12 @@ public class ServidorWeb2 {
             	    String contenido = "";
             	      
             	    while ((inputLine = in.readLine()) != null) {
-            	        contenido += inputLine + "\n";
+            	       // contenido += inputLine + "\n";
+            	        sal_servidor1.println(inputLine + "\n");
             	    }
                     System.out.println( "salio del ciclo while  " + contenido);
 
-            	    sal_servidor1.println(contenido);
+            	   
             	    in.close();
                 } catch ( Exception e ) {
                         System.out.println("Error: " + e );
