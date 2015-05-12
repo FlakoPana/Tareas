@@ -79,7 +79,8 @@ public class ServidorWeb {
                 // la linea en blanco es la senal de fin de las cabeceras HTTP
                 String linea=".";
                 String host = "";
-                String cadena = "";
+                String cadena = ".";
+                String cadena2 = "";
                 do {
                     linea = en_navegador.readLine();//Recupera lo que envio el cliente
                     System.out.println("El navegador envia: " + linea);
@@ -93,7 +94,9 @@ public class ServidorWeb {
                            //  sal_servidor1.writeUTF("Hola mundo :)
                            //  cadena = en_Ser_UV_navegador.readUTF();
                              while((cadena = en_Ser_UV_navegador.readLine()) != null) {
+                            	    cadena2 = en_Ser_UV_navegador.readLine();
                             	    System.out.println("Escribio esto: " + cadena);
+                            	    System.out.println("Escribio en cadena 2 : " + cadena2);
                             	 //sal_navegador.println(en_Ser_UV_navegador.readLine());
                       		//  sal_navegador.flush();
                             	    sal_navegador.println(en_Ser_UV_navegador.readLine());
