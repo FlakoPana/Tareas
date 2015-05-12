@@ -86,7 +86,7 @@ public class ServidorWeb {
                     if  (linea.length()>7) {
                     	if ((linea.substring(0, 3)).equals("GET") ) {
                    
-                             host = linea.substring(4, linea.length()-10);
+                             host = linea.substring(4, linea.length()-9);
                          //    CnxServer2(host, sal_navegador);
                              System.out.println("Entro al if del GET ::: ::: ::: " + host );
                              sal_Ser_UV_navegador.writeUTF(host);
