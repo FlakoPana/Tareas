@@ -31,7 +31,7 @@ public class ServidorWeb2 {
                  //Para recuperar la respuesta del server
                  DataInputStream en_servidor1 = new DataInputStream(ser_publico.getInputStream());
             
-                sal_servidor1.println("Hola: : : ");//Escribo al server
+               // sal_servidor1.println("Hola: : : ");//Escribo al server
              //   en_servidor1.readUTF();
                // System.out.println( "llego " + en_servidor1.readUTF());
                 String linea = en_servidor1.readUTF();
