@@ -51,6 +51,7 @@ public class ServidorWeb2 {
             	    while ((inputLine = in.readLine()) != null) {
             	       // contenido += inputLine + "\n";
             	        sal_servidor1.println(inputLine + "\n");
+            	        System.out.println( inputLine );
             	    }
                     System.out.println( "salio del ciclo while  " + contenido);
 
