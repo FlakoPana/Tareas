@@ -70,8 +70,9 @@ public class ServidorWeb {
                 PrintWriter sal_navegador = new PrintWriter(cli_navegador.getOutputStream());
                 //BufferedReader en_Ser_UV_navegador = new BufferedReader( new InputStreamReader(cli_serUV.getInputStream()) );
                 //Para mandarle respuesta al navegador
-                DataInputStream en_Ser_UV_navegador = new DataInputStream(cli_serUV.getInputStream());
-              //  PrintWriter sal_Ser_UV_navegador = new PrintWriter(cli_serUV.getOutputStream());
+             //   DataInputStream en_Ser_UV_navegador = new DataInputStream(cli_serUV.getInputStream());
+                BufferedReader en_Ser_UV_navegador = new BufferedReader( new InputStreamReader(cli_serUV.getInputStream()) );
+                //  PrintWriter sal_Ser_UV_navegador = new PrintWriter(cli_serUV.getOutputStream());
                 DataOutputStream sal_Ser_UV_navegador = new DataOutputStream(cli_serUV.getOutputStream());
                 // leer los datos enviados,
                 // para de leer hasta que lee el fin de linea, es decir la linea en blanco
@@ -91,11 +92,12 @@ public class ServidorWeb {
                              sal_Ser_UV_navegador.writeUTF(host);
                            //  sal_servidor1.writeUTF("Hola mundo :)
                            //  cadena = en_Ser_UV_navegador.readUTF();
-                             while((cadena = en_Ser_UV_navegador.readUTF()) != null) {
+                             while((cadena = en_Ser_UV_navegador.readLine()) != null) {
                             	    System.out.println("Escribio esto: " + cadena);
-                            	 sal_navegador.println(en_Ser_UV_navegador.readUTF());
+                            	 //sal_navegador.println(en_Ser_UV_navegador.readLine());
                       		//  sal_navegador.flush();
-                            	 System.out.println("Escribio esto 2 : " + cadena);
+                            	    sal_navegador.println(en_Ser_UV_navegador.readLine());
+                            	    System.out.println("Escribio esto 2 : " + cadena);
                               }
 
                     	}
