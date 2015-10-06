@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">SaludaRobot</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="Nombre"> Nombre </string>
+    <string name="Edad"> Edad</string>
+    <string name="ColorFavorito"> Color Favorito</string>
+    <string name="CadVacia"> </string>
+    <string name="Enviar">Enviar</string>
+</resources>
