@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Prueba2</string>
+
+    <string name="Rellene_lo_campos">Por favor rellene los siguentes campos: </string>
+    <string name="action_settings">Settings</string>
+    <string name="Nombre">Nombre: </string>
+    <string name="Apellido">Apellido: </string>
+    <string name="Color_Favorito">Color Favorito: </string>
+    <string name="Edad">Edad: </string>
+    <string name="BtnEnviar">Enviar </string>
+</resources>
